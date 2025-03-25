@@ -1,0 +1,24 @@
+CREATE TABLE Users (
+    Id SERIAL PRIMARY KEY,
+    Name TEXT,
+    Email TEXT,
+    Password TEXT
+);
+
+CREATE TABLE Wallets (
+    Id SERIAL PRIMARY KEY,
+    OwnerAccount TEXT,
+    Balance NUMERIC(18, 2),
+    AccountNumber TEXT,
+    UserId INT NOT NULL,
+    CONSTRAINT fk_user FOREIGN KEY (UserId) REFERENCES Users(Id) ON DELETE CASCADE
+);
+
+CREATE TABLE Transactions (
+    Id SERIAL PRIMARY KEY,
+    WalletId INT NOT NULL,
+    Amount NUMERIC(18, 2),
+    TransactionDate TIMESTAMP,
+    Type TEXT,
+    CONSTRAINT fk_wallet FOREIGN KEY (WalletId) REFERENCES Wallets(Id) ON DELETE CASCADE
+);
