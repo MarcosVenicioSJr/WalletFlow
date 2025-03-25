@@ -93,7 +93,7 @@ namespace WalletFlow.API.Controllers
             try
             {
                 _services.Transfer(request);
-                return Ok();
+                return Ok("Transferencia realizada com sucesso.");
             }
             catch (Exception ex)
             {

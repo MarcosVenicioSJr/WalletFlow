@@ -21,7 +21,7 @@ namespace WalletFlow.API.Controllers
         [Authorize]
         public ActionResult GetAll(string accountNumber)
         {
-            List<GetWalletByAccountNumberResponseDTO> transactionList = _services.GetAll(accountNumber);
+            List<GetTransactionHistoryResponseDTO> transactionList = _services.GetAll(accountNumber);
 
             return Ok(transactionList);
         }

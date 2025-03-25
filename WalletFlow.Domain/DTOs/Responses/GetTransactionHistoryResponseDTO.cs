@@ -4,9 +4,10 @@ namespace WalletFlow.Domain.DTOs.Responses
 {
     public class GetTransactionHistoryResponseDTO
     {
-        public decimal Amount { get; set; }
-        public DateTime TransactionDate { get; set; }
+        public string OwnerAccount { get; set; }
+        public decimal Balance { get; set; }
+        public string AccountNumber { get; set; }
         public string Type { get; set; }
-        public Wallet Wallet { get; set; }
+        public DateTime TransactionDate { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace WalletFlow.Services.Services
 
             _repository.Update(wallet);
 
-            TransactionHistory historyc = TransactionHistoryMapper.CreateDepositTransactionHistoryMapper(wallet, request.Balance, "Deposit");
+            TransactionHistory historyc = TransactionHistoryMapper.CreateDepositTransactionHistoryMapper(wallet, request.Balance, "Debit");
 
             _transactionsRepository.Add(historyc);
 
@@ -40,7 +40,7 @@ namespace WalletFlow.Services.Services
 
         public void Create(Wallet entity)
         {
-            Wallet wallet = GetByAccountNumber(entity.AccountNumber);
+            Wallet wallet = _repository.GetByAccountNumber(entity.AccountNumber).Result;
 
             if (wallet != null)
                 throw new Exception("Wallet already exists");

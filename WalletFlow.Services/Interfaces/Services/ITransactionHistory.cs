@@ -6,8 +6,8 @@ namespace WalletFlow.Services.Interfaces.Services
 {
     public interface ITransactionHistory : IServices<TransactionHistory>
     {
-        List<GetWalletByAccountNumberResponseDTO> GetAll(string accoutNumber);
+        List<GetTransactionHistoryResponseDTO> GetAll(string accoutNumber);
 
-        List<GetWalletByAccountNumberResponseDTO> GetTransactionsByPeriod(string accountNumber, DateTime? startDate = null, DateTime? endDate = null);
+        List<GetTransactionHistoryResponseDTO> GetTransactionsByPeriod(string accountNumber, DateTime? startDate = null, DateTime? endDate = null);
     }
 }

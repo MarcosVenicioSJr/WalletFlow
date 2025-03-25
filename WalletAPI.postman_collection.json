@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "14050a44-d7cb-4900-92a9-c6a4af16cb4e",
+		"name": "WalletAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20851665"
+	},
+	"item": [
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "CreateWallet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1hcmNvcyBQZWRybyIsIm5hbWVpZCI6IjQiLCJyb2xlIjoidXNlciIsIm5iZiI6MTc0MjkxMTA2MiwiZXhwIjoxNzQyOTE4MjYyLCJpYXQiOjE3NDI5MTEwNjIsImlzcyI6IlNldUVtaXNzb3IiLCJhdWQiOiJTdWFBdWRpZW5jZSJ9.0x25aZWJHqlanezkL3EMPy1aE8eTKvVnCBqgDRA1ryk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ownerAccount\": \"Marcos Venicio\",\r\n  \"balance\": 0,\r\n  \"accountNumber\": \"1234532\",\r\n  \"user\": {\r\n    \"name\": \"Marcos\",\r\n    \"email\": \"marcos.venicio1230@hotmail.com\",\r\n    \"password\": \"1234\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7283/Wallet",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7283",
+							"path": [
+								"Wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetWallet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1hcmNvcyBQZWRybyIsIm5hbWVpZCI6IjQiLCJyb2xlIjoidXNlciIsIm5iZiI6MTc0MjkxMTA2MiwiZXhwIjoxNzQyOTE4MjYyLCJpYXQiOjE3NDI5MTEwNjIsImlzcyI6IlNldUVtaXNzb3IiLCJhdWQiOiJTdWFBdWRpZW5jZSJ9.0x25aZWJHqlanezkL3EMPy1aE8eTKvVnCBqgDRA1ryk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7283/Wallet/123456",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7283",
+							"path": [
+								"Wallet",
+								"123456"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddBalance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1hcmNvcyBQZWRybyIsIm5hbWVpZCI6IjQiLCJyb2xlIjoidXNlciIsIm5iZiI6MTc0MjkxMTA2MiwiZXhwIjoxNzQyOTE4MjYyLCJpYXQiOjE3NDI5MTEwNjIsImlzcyI6IlNldUVtaXNzb3IiLCJhdWQiOiJTdWFBdWRpZW5jZSJ9.0x25aZWJHqlanezkL3EMPy1aE8eTKvVnCBqgDRA1ryk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountNumber\": \"123456\",\r\n  \"balance\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7283/Wallet/AddBalance",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7283",
+							"path": [
+								"Wallet",
+								"AddBalance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveBalance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1hcmNvcyBQZWRybyIsIm5hbWVpZCI6IjQiLCJyb2xlIjoidXNlciIsIm5iZiI6MTc0MjkxMTA2MiwiZXhwIjoxNzQyOTE4MjYyLCJpYXQiOjE3NDI5MTEwNjIsImlzcyI6IlNldUVtaXNzb3IiLCJhdWQiOiJTdWFBdWRpZW5jZSJ9.0x25aZWJHqlanezkL3EMPy1aE8eTKvVnCBqgDRA1ryk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountNumber\": \"123456\",\r\n  \"balance\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7283/Wallet/RemoveBalance",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7283",
+							"path": [
+								"Wallet",
+								"RemoveBalance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1hcmNvcyBQZWRybyIsIm5hbWVpZCI6IjQiLCJyb2xlIjoidXNlciIsIm5iZiI6MTc0MjkxMTA2MiwiZXhwIjoxNzQyOTE4MjYyLCJpYXQiOjE3NDI5MTEwNjIsImlzcyI6IlNldUVtaXNzb3IiLCJhdWQiOiJTdWFBdWRpZW5jZSJ9.0x25aZWJHqlanezkL3EMPy1aE8eTKvVnCBqgDRA1ryk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"toAccountNumber\": \"123451\",\r\n  \"toAccountOwner\": \"Bruno\",\r\n  \"fromAccountNumber\": \"123456\",\r\n  \"fromAccountOwner\": \"Marcos\",\r\n  \"balance\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7283/Wallet/Transfer",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7283",
+							"path": [
+								"Wallet",
+								"Transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TransactionHistory",
+			"item": [
+				{
+					"name": "GetAllAccountNumber",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1hcmNvcyBQZWRybyIsIm5hbWVpZCI6IjQiLCJyb2xlIjoidXNlciIsIm5iZiI6MTc0MjkxMTA2MiwiZXhwIjoxNzQyOTE4MjYyLCJpYXQiOjE3NDI5MTEwNjIsImlzcyI6IlNldUVtaXNzb3IiLCJhdWQiOiJTdWFBdWRpZW5jZSJ9.0x25aZWJHqlanezkL3EMPy1aE8eTKvVnCBqgDRA1ryk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7283/123456",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7283",
+							"path": [
+								"123456"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByPeriod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1hcmNvcyBQZWRybyIsIm5hbWVpZCI6IjQiLCJyb2xlIjoidXNlciIsIm5iZiI6MTc0MjkxMTA2MiwiZXhwIjoxNzQyOTE4MjYyLCJpYXQiOjE3NDI5MTEwNjIsImlzcyI6IlNldUVtaXNzb3IiLCJhdWQiOiJTdWFBdWRpZW5jZSJ9.0x25aZWJHqlanezkL3EMPy1aE8eTKvVnCBqgDRA1ryk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7283/by-period?accountNumber=123456&startDate=2025-03-25T11:48:16&endDate=2025-03-25T13:53:09",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7283",
+							"path": [
+								"by-period"
+							],
+							"query": [
+								{
+									"key": "accountNumber",
+									"value": "123456"
+								},
+								{
+									"key": "startDate",
+									"value": "2025-03-25T11:48:16"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-03-25T13:53:09"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Marcos Pedro\",\r\n    \"Email\": \"meu_email@example.com\",\r\n    \"Password\": \"minha_senha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7283/User",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7283",
+					"path": [
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"meu_email@example.com\",\r\n    \"Password\": \"minha_senha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7283/User/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7283",
+					"path": [
+						"User",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

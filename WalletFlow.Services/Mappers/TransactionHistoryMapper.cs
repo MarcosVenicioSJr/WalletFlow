@@ -16,13 +16,13 @@ namespace WalletFlow.Services.Mappers
             };
         }
 
-        public static List<GetWalletByAccountNumberResponseDTO> MapperResponseGet(List<TransactionHistory> transactionList, string accountNumber, Wallet wallet)
+        public static List<GetTransactionHistoryResponseDTO> MapperResponseGet(List<TransactionHistory> transactionList, string accountNumber, Wallet wallet)
         {
-            List<GetWalletByAccountNumberResponseDTO> response = new List<GetWalletByAccountNumberResponseDTO>();
+            List<GetTransactionHistoryResponseDTO> response = new List<GetTransactionHistoryResponseDTO>();
         
             foreach (var transaction in transactionList)
             {
-                GetWalletByAccountNumberResponseDTO getWalletByAccountNumberResponseDTO = new GetWalletByAccountNumberResponseDTO()
+                GetTransactionHistoryResponseDTO getWalletByAccountNumberResponseDTO = new GetTransactionHistoryResponseDTO()
                 {
                     OwnerAccount = wallet.OwnerAccount,
                     AccountNumber = accountNumber,

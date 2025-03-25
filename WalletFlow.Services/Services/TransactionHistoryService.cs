@@ -22,7 +22,7 @@ namespace WalletFlow.Services.Services
             throw new NotImplementedException();
         }
 
-        public List<GetWalletByAccountNumberResponseDTO> GetAll(string accountNumber)
+        public List<GetTransactionHistoryResponseDTO> GetAll(string accountNumber)
         {
             Wallet wallet = _repositoryWallet.GetByAccountNumber(accountNumber).Result;
 
@@ -34,7 +34,7 @@ namespace WalletFlow.Services.Services
             return TransactionHistoryMapper.MapperResponseGet(transactionsList, accountNumber, wallet);          
         }
 
-        public List<GetWalletByAccountNumberResponseDTO> GetTransactionsByPeriod(string accountNumber, DateTime? startDate = null, DateTime? endDate = null)
+        public List<GetTransactionHistoryResponseDTO> GetTransactionsByPeriod(string accountNumber, DateTime? startDate = null, DateTime? endDate = null)
         {
             if (string.IsNullOrEmpty(accountNumber))
                 throw new ArgumentException("O número da conta é obrigatório.");
